@@ -29,17 +29,6 @@ const projects = [
 	},
 	{
 		id: "03",
-		title: "blog",
-		category: "Journal & Insights",
-		color: "#10b981",
-		tech: "Astro 5 · TypeScript · Tailwind CSS · MDX",
-		description:
-			"Personal blog exploring technical deep-dives, system engineering, and the occasional hobbyist project.",
-		url: "https://blog.coreyburns.ca",
-		repo: "https://github.com/corey-burns-dev/blog",
-	},
-	{
-		id: "04",
 		title: "dream-transmission",
 		category: "Ambient Experience",
 		color: "#a855f7",
@@ -50,7 +39,7 @@ const projects = [
 		repo: "https://github.com/corey-burns-dev/dream-transmission",
 	},
 	{
-		id: "05",
+		id: "04",
 		title: "wake-transmission",
 		category: "Audio-Reactive Visualizer",
 		color: "#06b6d4",
@@ -61,7 +50,7 @@ const projects = [
 		repo: "https://github.com/corey-burns-dev/wake-transmission",
 	},
 	{
-		id: "06",
+		id: "05",
 		title: "image-mage",
 		category: "Media Tooling",
 		color: "#f59e0b",
@@ -72,7 +61,7 @@ const projects = [
 		repo: "https://github.com/corey-burns-dev/image-mage",
 	},
 	{
-		id: "07",
+		id: "06",
 		title: "tools-hub",
 		category: "Developer Utilities",
 		color: "#22c55e",
@@ -83,7 +72,7 @@ const projects = [
 		repo: "https://github.com/corey-burns-dev/tools-hub",
 	},
 	{
-		id: "08",
+		id: "07",
 		title: "games-hub",
 		category: "Arcade Platform",
 		color: "#ef4444",
@@ -92,6 +81,17 @@ const projects = [
 			"Browser arcade featuring 13 instant-play games including Snake, Pong, Flappy Jump, and 2048, with a single polished hub UI.",
 		url: "https://games.coreyburns.ca",
 		repo: "https://github.com/corey-burns-dev/games-hub",
+	},
+	{
+		id: "08",
+		title: "blog",
+		category: "Journal & Insights",
+		color: "#10b981",
+		tech: "Astro 5 · TypeScript · Tailwind CSS · MDX",
+		description:
+			"Personal blog exploring technical deep-dives, system engineering, and the occasional hobbyist project.",
+		url: "https://blog.coreyburns.ca",
+		repo: "https://github.com/corey-burns-dev/blog",
 	},
 ];
 
