@@ -192,7 +192,7 @@ export default function App() {
 				);
 			});
 
-			gsap.utils.toArray<HTMLElement>(".vdf-stagger").forEach((el, i) => {
+			gsap.utils.toArray<HTMLElement>(".vdf-stagger").forEach((el) => {
 				gsap.fromTo(
 					el,
 					{ opacity: 0, x: -40 },
@@ -427,7 +427,8 @@ export default function App() {
 										<span className="relative flex flex-col items-center justify-center min-h-[74px] gap-0.5 p-0.5 transition-transform duration-300 group-hover/skill:-translate-y-0.5">
 											<img
 												src={skill.icon}
-												alt={skill.name}
+												alt=""
+												aria-hidden="true"
 												loading="lazy"
 												className="object-contain w-10 h-10"
 											/>
