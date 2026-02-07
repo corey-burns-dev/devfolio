@@ -363,50 +363,52 @@ export default function App() {
 							}
 						>
 							<div className="flex flex-col items-start justify-between gap-8 md:flex-row md:items-end">
-								<button
-									type="button"
-									className="text-left bg-transparent border-none cursor-pointer vdf-skew grow"
-									onClick={() =>
-										window.open(project.url, "_blank", "noopener,noreferrer")
-									}
-								>
-									<span className="block mb-4 font-mono text-sm text-red-500">
-										{project.id}
-									</span>
-									<h3 className="text-5xl font-black tracking-tighter uppercase transition-colors duration-300 md:text-7xl group-hover:text-(--project-color) text-white [-webkit-text-stroke:1px_rgba(255,255,255,0.2)] group-hover:[-webkit-text-stroke:0px]">
-										{project.title}
-									</h3>
-									<p className="max-w-xl mt-4 text-sm leading-relaxed text-neutral-400">
-										{project.description}
-									</p>
-									<p className="mt-3 font-mono text-xs text-neutral-600">
-										{project.tech}
-									</p>
-								</button>
-								<div className="flex flex-col items-end gap-4 text-right vdf-skew shrink-0">
-									<div className="flex items-center gap-4">
+								<div className="text-left bg-transparent border-none vdf-skew grow">
+									<div className="flex items-center justify-between gap-4 mb-4">
+										<span className="font-mono text-sm text-red-500">
+											{project.id}
+										</span>
 										<a
 											href={project.repo}
 											target="_blank"
 											rel="noopener noreferrer"
-											className="flex items-center gap-2 px-3 py-1.5 transition-all duration-300 border rounded-full border-white/10 hover:border-white/40 hover:bg-white/5 group/repo"
+											className="flex items-center gap-3 px-4 py-2 transition-all duration-300 border rounded-full border-white/10 hover:border-white/40 hover:bg-white/5 group/repo"
 											title="View Repository"
 										>
 											<img
 												src="/icons/github.svg"
 												alt="GitHub"
-												className="w-4 h-4 transition-opacity opacity-50 group-hover/repo:opacity-100 invert"
+												className="w-5 h-5 transition-opacity opacity-50 group-hover/repo:opacity-100 invert"
 											/>
-											<span className="font-mono text-[10px] tracking-widest uppercase text-neutral-500 group-hover/repo:text-white">
-												Repo
+											<span className="font-mono text-xs tracking-widest uppercase text-neutral-500 group-hover/repo:text-white">
+												Repository
 											</span>
 										</a>
 									</div>
-									<p className="text-xl tracking-widest uppercase text-neutral-400">
+									<button
+										type="button"
+										className="text-left bg-transparent border-none cursor-pointer"
+										onClick={() =>
+											window.open(project.url, "_blank", "noopener,noreferrer")
+										}
+									>
+										<h3 className="text-5xl font-black tracking-tighter uppercase transition-colors duration-300 md:text-8xl group-hover:text-(--project-color) text-white [-webkit-text-stroke:1px_rgba(255,255,255,0.2)] group-hover:[-webkit-text-stroke:0px]">
+											{project.title}
+										</h3>
+									</button>
+									<p className="max-w-xl mt-6 text-base leading-relaxed text-neutral-400">
+										{project.description}
+									</p>
+									<p className="mt-4 font-mono text-xs tracking-wider text-neutral-600">
+										{project.tech}
+									</p>
+								</div>
+								<div className="text-right vdf-skew shrink-0">
+									<p className="text-2xl font-bold tracking-widest uppercase text-neutral-400">
 										{project.category}
 									</p>
 									<div
-										className="h-2 mt-2 transition-all duration-500 ease-out bg-(--project-color) w-0 group-hover:w-full"
+										className="h-2 mt-4 transition-all duration-500 ease-out bg-(--project-color) w-0 group-hover:w-full"
 										style={{ backgroundColor: project.color }}
 									/>
 								</div>
@@ -519,49 +521,77 @@ export default function App() {
 			{/* Contact */}
 			<section
 				id="vdf-contact"
-				className="min-h-[70vh] flex items-center justify-center bg-neutral-950 px-8 relative overflow-hidden"
+				className="min-h-screen flex items-center justify-center bg-neutral-950 px-8 relative overflow-hidden"
 			>
-				<div className="absolute inset-0 opacity-5">
-					<div className="absolute top-1/4 left-1/4 w-96 h-96 bg-red-500 rounded-full blur-[128px]" />
-					<div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-purple-500 rounded-full blur-[96px]" />
+				<div className="absolute inset-0 opacity-10">
+					<div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-red-500/20 rounded-full blur-[160px] animate-pulse" />
+					<div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-purple-500/10 rounded-full blur-[140px]" />
 				</div>
-				<div className="relative z-10 text-center vdf-reveal">
-					<p className="mb-4 font-mono text-sm tracking-widest text-red-500 uppercase">
-						Get In Touch
+				<div className="relative z-10 w-full max-w-4xl text-center vdf-reveal">
+					<p className="mb-6 font-mono text-sm tracking-[0.5em] text-red-500 uppercase">
+						Available for opportunities
 					</p>
-					<h3 className="mb-6 text-5xl font-black tracking-tight uppercase md:text-7xl">
+					<h3 className="mb-12 text-6xl font-black tracking-tight uppercase md:text-9xl leading-[0.9]">
 						Let's Build
 						<br />
-						Something Great
+						<span className="text-transparent outline-title [-webkit-text-stroke:1px_white]">
+							Something
+						</span>
+						<br />
+						Great.
 					</h3>
-					<p className="max-w-md mx-auto mb-10 text-lg text-neutral-400">
-						Always open to interesting projects and collaborations. Let's talk
-						about what we can create together.
-					</p>
-					<a
-						href="mailto:corey@coreyburns.dev"
-						className="inline-block px-10 py-4 font-bold tracking-widest text-white uppercase transition-colors duration-300 transform bg-red-600 hover:bg-red-700 hover:-skew-x-12"
-					>
-						corey@coreyburns.dev
-					</a>
-					<div className="flex justify-center gap-8 mt-10 text-sm tracking-widest uppercase text-neutral-500">
+
+					<div className="flex flex-col items-center gap-12 mt-20">
 						<a
-							href="https://github.com/corey-burns-dev"
-							target="_blank"
-							rel="noopener noreferrer"
-							className="transition-colors hover:text-red-500"
+							href="mailto:coreyburns@outlook.com"
+							className="group relative inline-flex items-center gap-6 px-12 py-6 text-xl md:text-2xl font-bold tracking-tighter text-white uppercase transition-all duration-500 bg-red-600 hover:bg-red-700 hover:-translate-y-1"
 						>
-							GitHub
+							<span className="relative z-10">coreyburns@outlook.com</span>
+							<div className="absolute inset-0 w-full h-full bg-red-800 translate-x-3 translate-y-3 -z-10 transition-transform duration-500 group-hover:translate-x-0 group-hover:translate-y-0" />
 						</a>
-						<a
-							href="https://linkedin.com/in/corey-burns"
-							target="_blank"
-							rel="noopener noreferrer"
-							className="transition-colors hover:text-red-500"
-						>
-							LinkedIn
-						</a>
-						<span className="transition-colors text-neutral-600">Twitter</span>
+
+						<div className="flex flex-wrap justify-center gap-12 mt-8">
+							<a
+								href="https://github.com/corey-burns-dev"
+								target="_blank"
+								rel="noopener noreferrer"
+								className="flex flex-col items-center gap-4 transition-all duration-300 opacity-50 hover:opacity-100 hover:scale-110 group/social"
+							>
+								<div className="p-4 border rounded-full border-white/10 group-hover/social:border-white/30 group-hover/social:bg-white/5">
+									<img
+										src="/icons/github.svg"
+										alt="GitHub"
+										className="w-8 h-8 invert"
+									/>
+								</div>
+								<span className="font-mono text-xs tracking-widest uppercase">
+									GitHub
+								</span>
+							</a>
+							<a
+								href="https://linkedin.com/in/corey-burns"
+								target="_blank"
+								rel="noopener noreferrer"
+								className="flex flex-col items-center gap-4 transition-all duration-300 opacity-50 hover:opacity-100 hover:scale-110 group/social"
+							>
+								<div className="p-4 border rounded-full border-white/10 group-hover/social:border-white/30 group-hover/social:bg-white/5">
+									<img
+										src="/icons/linkedin.svg"
+										alt="LinkedIn"
+										className="w-8 h-8 invert"
+									/>
+								</div>
+								<span className="font-mono text-xs tracking-widest uppercase">
+									LinkedIn
+								</span>
+							</a>
+						</div>
+					</div>
+
+					<div className="mt-32 pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] font-mono uppercase tracking-[0.3em] text-neutral-600">
+						<p>© 2026 Corey Burns</p>
+						<p>Built with Astro & GSAP</p>
+						<p>Crafted in Canada</p>
 					</div>
 				</div>
 			</section>
