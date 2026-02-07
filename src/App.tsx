@@ -260,7 +260,7 @@ export default function App() {
 	return (
 		<div
 			ref={containerRef}
-			className="min-h-screen overflow-hidden text-white bg-neutral-900 selection:bg-red-500/30"
+			className="min-h-screen overflow-x-hidden text-white bg-neutral-900 selection:bg-red-500/30"
 		>
 			{/* Navigation */}
 			<nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 py-6 mix-blend-difference">
@@ -373,7 +373,7 @@ export default function App() {
 									<span className="block mb-4 font-mono text-sm text-red-500">
 										{project.id}
 									</span>
-									<h3 className="text-5xl font-black tracking-tighter uppercase transition-colors duration-300 md:text-7xl group-hover:text-[var(--project-color)] text-white [-webkit-text-stroke:1px_rgba(255,255,255,0.2)] group-hover:[-webkit-text-stroke:0px]">
+									<h3 className="text-5xl font-black tracking-tighter uppercase transition-colors duration-300 md:text-7xl group-hover:text-(--project-color) text-white [-webkit-text-stroke:1px_rgba(255,255,255,0.2)] group-hover:[-webkit-text-stroke:0px]">
 										{project.title}
 									</h3>
 									<p className="max-w-xl mt-4 text-sm leading-relaxed text-neutral-400">
@@ -406,13 +406,13 @@ export default function App() {
 										{project.category}
 									</p>
 									<div
-										className="h-2 mt-2 transition-all duration-500 ease-out bg-[var(--project-color)] w-0 group-hover:w-full"
+										className="h-2 mt-2 transition-all duration-500 ease-out bg-(--project-color) w-0 group-hover:w-full"
 										style={{ backgroundColor: project.color }}
 									/>
 								</div>
 							</div>
 							<div
-								className="absolute inset-0 transition-opacity duration-500 opacity-0 -z-10 group-hover:opacity-10 bg-gradient-to-r from-transparent via-current to-transparent"
+								className="absolute inset-0 transition-opacity duration-500 opacity-0 -z-10 group-hover:opacity-10 bg-linear-to-r from-transparent via-current to-transparent"
 								style={{ color: project.color }}
 							/>
 						</div>
@@ -509,7 +509,7 @@ export default function App() {
 								loading="lazy"
 								className="object-cover object-center w-full h-full"
 							/>
-							<div className="absolute inset-0 bg-gradient-to-t from-neutral-950/55 via-transparent to-red-500/10" />
+							<div className="absolute inset-0 bg-linear-to-t from-neutral-950/55 via-transparent to-red-500/10" />
 						</div>
 						<div className="absolute w-full h-full border rounded-sm -bottom-4 -right-4 border-red-500/20 -z-10" />
 					</div>
@@ -545,15 +545,23 @@ export default function App() {
 						corey@coreyburns.dev
 					</a>
 					<div className="flex justify-center gap-8 mt-10 text-sm tracking-widest uppercase text-neutral-500">
-						<span className="transition-colors cursor-pointer hover:text-red-500">
+						<a
+							href="https://github.com/corey-burns-dev"
+							target="_blank"
+							rel="noopener noreferrer"
+							className="transition-colors hover:text-red-500"
+						>
 							GitHub
-						</span>
-						<span className="transition-colors cursor-pointer hover:text-red-500">
+						</a>
+						<a
+							href="https://linkedin.com/in/corey-burns"
+							target="_blank"
+							rel="noopener noreferrer"
+							className="transition-colors hover:text-red-500"
+						>
 							LinkedIn
-						</span>
-						<span className="transition-colors cursor-pointer hover:text-red-500">
-							Twitter
-						</span>
+						</a>
+						<span className="transition-colors text-neutral-600">Twitter</span>
 					</div>
 				</div>
 			</section>
