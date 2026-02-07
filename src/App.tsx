@@ -7,46 +7,26 @@ gsap.registerPlugin(ScrollTrigger);
 const projects = [
   {
     id: '01',
-    title: 'games-hub',
-    category: 'Arcade Platform',
-    color: '#ef4444',
-    tech: 'Next.js 16 · React 19 · TypeScript · Tailwind CSS',
-    description:
-      'Browser arcade featuring 13 instant-play games including Snake, Pong, Flappy Jump, and 2048, with a single polished hub UI.',
-    url: 'https://github.com/corey-burns-dev/games-hub',
-  },
-  {
-    id: '02',
-    title: 'image-mage',
-    category: 'Media Tooling',
-    color: '#f59e0b',
-    tech: 'Next.js 16 · Sharp · TypeScript · Tailwind CSS',
-    description:
-      'Image conversion and compression tool with batch uploads, quality presets, target-size tuning, and ZIP export workflows.',
-    url: 'https://github.com/corey-burns-dev/image-mage',
-  },
-  {
-    id: '03',
-    title: 'tools-hub',
-    category: 'Developer Utilities',
-    color: '#22c55e',
-    tech: 'Astro 5 · TypeScript · Tailwind CSS · Cloudflare Workers',
-    description:
-      'Suite of practical dev tools (JSON, regex, generators, converters, and more) packaged in a fast, clean Astro app.',
-    url: 'https://github.com/corey-burns-dev/tools-hub',
-  },
-  {
-    id: '04',
     title: 'vibeshift',
-    category: 'Full-Stack Platform',
+    category: 'Social Platform',
     color: '#3b82f6',
     tech: 'Go · React · PostgreSQL · Redis · Docker',
     description:
-      'Containerized full-stack system with Go backend, React frontend, Redis/Postgres services, and Makefile-driven dev workflows.',
+      'Reddit-style community app focused on creativity and shared interests, without politics, religion, or news-driven content.',
     url: 'https://github.com/corey-burns-dev/vibeshift',
   },
   {
-    id: '05',
+    id: '02',
+    title: 'hackernews',
+    category: 'News Client',
+    color: '#fb923c',
+    tech: 'Next.js 16 · React 19 · Framer Motion · HN Firebase API',
+    description:
+      'A cleaner, more visual Hacker News reader that fetches live stories and comments from the official API.',
+    url: 'https://github.com/corey-burns-dev/hackernews',
+  },
+  {
+    id: '03',
     title: 'dream-transmission',
     category: 'Ambient Experience',
     color: '#a855f7',
@@ -56,7 +36,7 @@ const projects = [
     url: 'https://github.com/corey-burns-dev/dream-transmission',
   },
   {
-    id: '06',
+    id: '04',
     title: 'wake-transmission',
     category: 'Audio-Reactive Visualizer',
     color: '#06b6d4',
@@ -66,14 +46,34 @@ const projects = [
     url: 'https://github.com/corey-burns-dev/wake-transmission',
   },
   {
-    id: '07',
-    title: 'hackernews',
-    category: 'News Client',
-    color: '#fb923c',
-    tech: 'Next.js 16 · React 19 · Framer Motion · HN Firebase API',
+    id: '05',
+    title: 'image-mage',
+    category: 'Media Tooling',
+    color: '#f59e0b',
+    tech: 'Next.js 16 · Sharp · TypeScript · Tailwind CSS',
     description:
-      'A cleaner, more visual Hacker News reader that fetches live stories and comments from the official API.',
-    url: 'https://github.com/corey-burns-dev/hackernews',
+      'Image conversion and compression tool with batch uploads, quality presets, target-size tuning, and ZIP export workflows.',
+    url: 'https://github.com/corey-burns-dev/image-mage',
+  },
+  {
+    id: '06',
+    title: 'tools-hub',
+    category: 'Developer Utilities',
+    color: '#22c55e',
+    tech: 'Astro 5 · TypeScript · Tailwind CSS · Cloudflare Workers',
+    description:
+      'Suite of practical dev tools (JSON, regex, generators, converters, and more) packaged in a fast, clean Astro app.',
+    url: 'https://github.com/corey-burns-dev/tools-hub',
+  },
+  {
+    id: '07',
+    title: 'games-hub',
+    category: 'Arcade Platform',
+    color: '#ef4444',
+    tech: 'Next.js 16 · React 19 · TypeScript · Tailwind CSS',
+    description:
+      'Browser arcade featuring 13 instant-play games including Snake, Pong, Flappy Jump, and 2048, with a single polished hub UI.',
+    url: 'https://github.com/corey-burns-dev/games-hub',
   },
 ];
 
