@@ -13,7 +13,8 @@ const projects = [
 		tech: "Go · React · PostgreSQL · Redis · Docker",
 		description:
 			"Reddit-style community app focused on creativity and shared interests, without politics, religion, or news-driven content.",
-		url: "https://github.com/corey-burns-dev/vibeshift",
+		url: "https://vibeshift.coreyburns.ca",
+		repo: "https://github.com/corey-burns-dev/vibeshift",
 	},
 	{
 		id: "02",
@@ -23,57 +24,74 @@ const projects = [
 		tech: "Next.js 16 · React 19 · Framer Motion · HN Firebase API",
 		description:
 			"A cleaner, more visual Hacker News reader that fetches live stories and comments from the official API.",
-		url: "https://github.com/corey-burns-dev/hackernews",
+		url: "https://hackernews.coreyburns.ca",
+		repo: "https://github.com/corey-burns-dev/hackernews",
 	},
 	{
 		id: "03",
+		title: "blog",
+		category: "Journal & Insights",
+		color: "#10b981",
+		tech: "Astro 5 · TypeScript · Tailwind CSS · MDX",
+		description:
+			"Personal blog exploring technical deep-dives, system engineering, and the occasional hobbyist project.",
+		url: "https://blog.coreyburns.ca",
+		repo: "https://github.com/corey-burns-dev/blog",
+	},
+	{
+		id: "04",
 		title: "dream-transmission",
 		category: "Ambient Experience",
 		color: "#a855f7",
 		tech: "React · Three.js · Framer Motion · Web Audio",
 		description:
 			"Meditative music experience with live shader-driven sky visuals, ambient themes, and an immersive reactive player.",
-		url: "https://github.com/corey-burns-dev/dream-transmission",
+		url: "https://dreaming.coreyburns.ca",
+		repo: "https://github.com/corey-burns-dev/dream-transmission",
 	},
 	{
-		id: "04",
+		id: "05",
 		title: "wake-transmission",
 		category: "Audio-Reactive Visualizer",
 		color: "#06b6d4",
 		tech: "React · Three.js · Tone.js · Framer Motion",
 		description:
 			"Realtime visualizer with frequency-band analysis, cinematic post-processing, theme system, and monitor-style HUD overlays.",
-		url: "https://github.com/corey-burns-dev/wake-transmission",
+		url: "https://wake.coreyburns.ca",
+		repo: "https://github.com/corey-burns-dev/wake-transmission",
 	},
 	{
-		id: "05",
+		id: "06",
 		title: "image-mage",
 		category: "Media Tooling",
 		color: "#f59e0b",
 		tech: "Next.js 16 · Sharp · TypeScript · Tailwind CSS",
 		description:
 			"Image conversion and compression tool with batch uploads, quality presets, target-size tuning, and ZIP export workflows.",
-		url: "https://github.com/corey-burns-dev/image-mage",
+		url: "https://image-mage.coreyburns.ca",
+		repo: "https://github.com/corey-burns-dev/image-mage",
 	},
 	{
-		id: "06",
+		id: "07",
 		title: "tools-hub",
 		category: "Developer Utilities",
 		color: "#22c55e",
 		tech: "Astro 5 · TypeScript · Tailwind CSS · Cloudflare Workers",
 		description:
 			"Suite of practical dev tools (JSON, regex, generators, converters, and more) packaged in a fast, clean Astro app.",
-		url: "https://github.com/corey-burns-dev/tools-hub",
+		url: "https://tools.coreyburns.ca",
+		repo: "https://github.com/corey-burns-dev/tools-hub",
 	},
 	{
-		id: "07",
+		id: "08",
 		title: "games-hub",
 		category: "Arcade Platform",
 		color: "#ef4444",
 		tech: "Next.js 16 · React 19 · TypeScript · Tailwind CSS",
 		description:
 			"Browser arcade featuring 13 instant-play games including Snake, Pong, Flappy Jump, and 2048, with a single polished hub UI.",
-		url: "https://github.com/corey-burns-dev/games-hub",
+		url: "https://games.coreyburns.ca",
+		repo: "https://github.com/corey-burns-dev/games-hub",
 	},
 ];
 
@@ -338,18 +356,20 @@ export default function App() {
 				</div>
 				<div className="flex flex-col gap-24">
 					{projects.map((project) => (
-						<button
+						<div
 							key={project.id}
-							type="button"
-							className="relative w-full p-0 pt-12 text-left bg-transparent border-t cursor-pointer vdf-reveal group border-neutral-800"
-							onClick={() =>
-								window.open(project.url, "_blank", "noopener,noreferrer")
-							}
+							className="relative w-full p-0 pt-12 text-left bg-transparent border-t vdf-reveal group border-neutral-800"
 							onMouseEnter={() => setHoveredProject(project.id)}
 							onMouseLeave={() => setHoveredProject(null)}
 						>
 							<div className="flex flex-col items-start justify-between gap-8 md:flex-row md:items-end">
-								<div className="vdf-skew">
+								<button
+									type="button"
+									className="text-left bg-transparent border-none cursor-pointer vdf-skew grow"
+									onClick={() =>
+										window.open(project.url, "_blank", "noopener,noreferrer")
+									}
+								>
 									<span className="block mb-4 font-mono text-sm text-red-500">
 										{project.id}
 									</span>
@@ -372,16 +392,31 @@ export default function App() {
 									<p className="mt-3 font-mono text-xs text-neutral-600">
 										{project.tech}
 									</p>
-								</div>
-								<div className="text-right vdf-skew shrink-0">
+								</button>
+								<div className="flex flex-col items-end gap-4 text-right vdf-skew shrink-0">
+									<div className="flex items-center gap-4">
+										<a
+											href={project.repo}
+											target="_blank"
+											rel="noopener noreferrer"
+											className="flex items-center gap-2 px-3 py-1.5 transition-all duration-300 border rounded-full border-white/10 hover:border-white/40 hover:bg-white/5 group/repo"
+											title="View Repository"
+										>
+											<img
+												src="/icons/github.svg"
+												alt="GitHub"
+												className="w-4 h-4 transition-opacity opacity-50 group-hover/repo:opacity-100 invert"
+											/>
+											<span className="font-mono text-[10px] tracking-widest uppercase text-neutral-500 group-hover/repo:text-white">
+												Repo
+											</span>
+										</a>
+									</div>
 									<p className="text-xl tracking-widest uppercase text-neutral-400">
 										{project.category}
 									</p>
-									<p className="mt-2 font-mono text-[10px] tracking-[0.2em] uppercase text-neutral-600 group-hover:text-white/70">
-										View Repo
-									</p>
 									<div
-										className="h-2 mt-4 transition-all duration-500 ease-out bg-current"
+										className="h-2 mt-2 transition-all duration-500 ease-out bg-current"
 										style={{
 											width: hoveredProject === project.id ? "100%" : "0%",
 											backgroundColor: project.color,
@@ -393,7 +428,7 @@ export default function App() {
 								className="absolute inset-0 transition-opacity duration-500 opacity-0 -z-10 group-hover:opacity-10 bg-gradient-to-r from-transparent via-current to-transparent"
 								style={{ color: project.color }}
 							/>
-						</button>
+						</div>
 					))}
 				</div>
 			</section>
