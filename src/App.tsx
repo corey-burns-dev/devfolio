@@ -65,6 +65,16 @@ const projects = [
       'Realtime visualizer with frequency-band analysis, cinematic post-processing, theme system, and monitor-style HUD overlays.',
     url: 'https://github.com/corey-burns-dev/wake-transmission',
   },
+  {
+    id: '07',
+    title: 'hackernews',
+    category: 'News Client',
+    color: '#fb923c',
+    tech: 'Next.js 16 · React 19 · Framer Motion · HN Firebase API',
+    description:
+      'A cleaner, more visual Hacker News reader that fetches live stories and comments from the official API.',
+    url: 'https://github.com/corey-burns-dev/hackernews',
+  },
 ];
 
 const skills = [
