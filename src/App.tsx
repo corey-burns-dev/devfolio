@@ -167,7 +167,6 @@ const skills = [
 
 export default function App() {
 	const containerRef = useRef<HTMLDivElement>(null);
-	const [hoveredProject, setHoveredProject] = useState<string | null>(null);
 	const [activeSection, setActiveSection] = useState("hero");
 
 	useEffect(() => {
@@ -359,8 +358,9 @@ export default function App() {
 						<div
 							key={project.id}
 							className="relative w-full p-0 pt-12 text-left bg-transparent border-t vdf-reveal group border-neutral-800"
-							onMouseEnter={() => setHoveredProject(project.id)}
-							onMouseLeave={() => setHoveredProject(null)}
+							style={
+								{ "--project-color": project.color } as React.CSSProperties
+							}
 						>
 							<div className="flex flex-col items-start justify-between gap-8 md:flex-row md:items-end">
 								<button
@@ -373,17 +373,7 @@ export default function App() {
 									<span className="block mb-4 font-mono text-sm text-red-500">
 										{project.id}
 									</span>
-									<h3
-										className="text-5xl font-black tracking-tighter uppercase transition-colors duration-300 md:text-7xl"
-										style={{
-											color:
-												hoveredProject === project.id ? project.color : "white",
-											WebkitTextStroke:
-												hoveredProject === project.id
-													? "0px"
-													: "1px rgba(255,255,255,0.2)",
-										}}
-									>
+									<h3 className="text-5xl font-black tracking-tighter uppercase transition-colors duration-300 md:text-7xl group-hover:text-[var(--project-color)] text-white [-webkit-text-stroke:1px_rgba(255,255,255,0.2)] group-hover:[-webkit-text-stroke:0px]">
 										{project.title}
 									</h3>
 									<p className="max-w-xl mt-4 text-sm leading-relaxed text-neutral-400">
@@ -416,11 +406,8 @@ export default function App() {
 										{project.category}
 									</p>
 									<div
-										className="h-2 mt-2 transition-all duration-500 ease-out bg-current"
-										style={{
-											width: hoveredProject === project.id ? "100%" : "0%",
-											backgroundColor: project.color,
-										}}
+										className="h-2 mt-2 transition-all duration-500 ease-out bg-[var(--project-color)] w-0 group-hover:w-full"
+										style={{ backgroundColor: project.color }}
 									/>
 								</div>
 							</div>
