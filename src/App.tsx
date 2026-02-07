@@ -521,7 +521,7 @@ export default function App() {
 			{/* Contact */}
 			<section
 				id="vdf-contact"
-				className="min-h-screen flex items-center justify-center bg-neutral-950 px-8 relative overflow-hidden"
+				className="min-h-screen flex items-center justify-center bg-neutral-950 px-8 py-32 relative overflow-hidden"
 			>
 				<div className="absolute inset-0 opacity-10">
 					<div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-red-500/20 rounded-full blur-[160px] animate-pulse" />
