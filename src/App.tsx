@@ -7,59 +7,134 @@ gsap.registerPlugin(ScrollTrigger);
 const projects = [
   {
     id: '01',
-    title: 'Aether Dashboard',
-    category: 'Full-Stack SaaS',
+    title: 'games-hub',
+    category: 'Arcade Platform',
     color: '#ef4444',
-    tech: 'React · Node.js · PostgreSQL · WebSocket',
+    tech: 'Next.js 16 · React 19 · TypeScript · Tailwind CSS',
     description:
-      'Real-time analytics dashboard for IoT fleet management. Handles 50k+ concurrent device streams with sub-200ms latency. Built custom WebSocket orchestration layer and interactive D3 visualizations.',
+      'Browser arcade featuring 13 instant-play games including Snake, Pong, Flappy Jump, and 2048, with a single polished hub UI.',
+    url: 'https://github.com/corey-burns-dev/games-hub',
   },
   {
     id: '02',
-    title: 'Catalyst CMS',
-    category: 'Headless CMS Platform',
-    color: '#a855f7',
-    tech: 'Next.js · GraphQL · MongoDB · AWS Lambda',
+    title: 'image-mage',
+    category: 'Media Tooling',
+    color: '#f59e0b',
+    tech: 'Next.js 16 · Sharp · TypeScript · Tailwind CSS',
     description:
-      'Enterprise headless CMS serving 2M+ page views monthly. Features a drag-and-drop visual editor, real-time collaboration, and a plugin architecture supporting 40+ community extensions.',
+      'Image conversion and compression tool with batch uploads, quality presets, target-size tuning, and ZIP export workflows.',
+    url: 'https://github.com/corey-burns-dev/image-mage',
   },
   {
     id: '03',
-    title: 'Pulse Messenger',
-    category: 'Real-Time Communication',
-    color: '#3b82f6',
-    tech: 'React Native · Elixir · Phoenix · Redis',
+    title: 'tools-hub',
+    category: 'Developer Utilities',
+    color: '#22c55e',
+    tech: 'Astro 5 · TypeScript · Tailwind CSS · Cloudflare Workers',
     description:
-      'End-to-end encrypted messaging platform with voice channels, screen share, and AI-powered thread summaries. Scaled to 100k DAU with 99.97% uptime over 18 months.',
+      'Suite of practical dev tools (JSON, regex, generators, converters, and more) packaged in a fast, clean Astro app.',
+    url: 'https://github.com/corey-burns-dev/tools-hub',
   },
   {
     id: '04',
-    title: 'Terraform Viz',
-    category: 'DevOps Tooling',
-    color: '#10b981',
-    tech: 'TypeScript · Go · D3.js · Docker',
+    title: 'vibeshift',
+    category: 'Full-Stack Platform',
+    color: '#3b82f6',
+    tech: 'Go · React · PostgreSQL · Redis · Docker',
     description:
-      'Open-source infrastructure visualization tool that parses Terraform state files and renders interactive dependency graphs. 4.2k GitHub stars and adopted by three Fortune 500 companies.',
+      'Containerized full-stack system with Go backend, React frontend, Redis/Postgres services, and Makefile-driven dev workflows.',
+    url: 'https://github.com/corey-burns-dev/vibeshift',
   },
   {
     id: '05',
-    title: 'Mercato',
-    category: 'E-Commerce Engine',
-    color: '#f59e0b',
-    tech: 'Remix · Stripe · Prisma · Cloudflare Workers',
+    title: 'dream-transmission',
+    category: 'Ambient Experience',
+    color: '#a855f7',
+    tech: 'React · Three.js · Framer Motion · Web Audio',
     description:
-      'Composable commerce platform powering 200+ storefronts. Handles $8M+ GMV annually with edge-rendered pages loading in under 400ms. Custom checkout pipeline with multi-currency support.',
+      'Meditative music experience with live shader-driven sky visuals, ambient themes, and an immersive reactive player.',
+    url: 'https://github.com/corey-burns-dev/dream-transmission',
+  },
+  {
+    id: '06',
+    title: 'wake-transmission',
+    category: 'Audio-Reactive Visualizer',
+    color: '#06b6d4',
+    tech: 'React · Three.js · Tone.js · Framer Motion',
+    description:
+      'Realtime visualizer with frequency-band analysis, cinematic post-processing, theme system, and monitor-style HUD overlays.',
+    url: 'https://github.com/corey-burns-dev/wake-transmission',
   },
 ];
 
 const skills = [
   {
     category: 'Frontend',
-    items: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Three.js', 'Framer Motion'],
+    items: [
+      { name: 'HTML', icon: '/icons/html.svg' },
+      { name: 'JavaScript', icon: '/icons/javascript.svg' },
+      { name: 'React', icon: '/icons/react-auto.svg' },
+      { name: 'Redux', icon: '/icons/redux.svg' },
+      { name: 'Vue.js', icon: '/icons/vuejs-auto.svg' },
+      { name: 'Next.js', icon: '/icons/nextjs-auto.svg' },
+      { name: 'Remix', icon: '/icons/remix-auto.svg' },
+      { name: 'TypeScript', icon: '/icons/typescript.svg' },
+      { name: 'Tailwind CSS', icon: '/icons/tailwindcss-auto.svg' },
+      { name: 'Sass', icon: '/icons/sass.svg' },
+      { name: 'Material UI', icon: '/icons/materialui-auto.svg' },
+      { name: 'Three.js', icon: '/icons/threejs-auto.svg' },
+      { name: 'Framer Motion', icon: '/icons/framer-auto.svg' },
+      { name: 'Vite', icon: '/icons/vite-auto.svg' },
+      { name: 'Webpack', icon: '/icons/webpack-auto.svg' },
+    ],
   },
-  { category: 'Backend', items: ['Node.js', 'Python', 'Go', 'GraphQL', 'REST APIs', 'Elixir'] },
-  { category: 'Database', items: ['PostgreSQL', 'MongoDB', 'Redis', 'Prisma', 'Drizzle ORM'] },
-  { category: 'DevOps', items: ['Docker', 'AWS', 'Vercel', 'CI/CD', 'Terraform', 'Kubernetes'] },
+  {
+    category: 'Backend',
+    items: [
+      { name: 'Node.js', icon: '/icons/nodejs-auto.svg' },
+      { name: 'PHP', icon: '/icons/php-auto.svg' },
+      { name: 'Ruby', icon: '/icons/ruby.svg' },
+      { name: 'Python', icon: '/icons/python-auto.svg' },
+      { name: 'Go', icon: '/icons/golang.svg' },
+      { name: 'GraphQL', icon: '/icons/graphql-auto.svg' },
+      { name: 'REST APIs', icon: '/icons/api-auto.svg' },
+      { name: 'Elixir', icon: '/icons/elixir-auto.svg' },
+      { name: 'Nginx', icon: '/icons/nginx.svg' },
+      { name: 'Firebase', icon: '/icons/firebase-auto.svg' },
+      { name: 'PostgreSQL', icon: '/icons/postgresql-auto.svg' },
+      { name: 'MySQL', icon: '/icons/mysql-auto.svg' },
+      { name: 'MongoDB', icon: '/icons/mongodb.svg' },
+      { name: 'Redis', icon: '/icons/redis-auto.svg' },
+      { name: 'Prisma', icon: '/icons/prisma.svg' },
+      { name: 'Sequelize', icon: '/icons/sequelize-auto.svg' },
+      { name: 'Drizzle ORM', icon: '/icons/drizzle-auto.svg' },
+    ],
+  },
+  {
+    category: 'DevOps & Cloud',
+    items: [
+      { name: 'Git', icon: '/icons/git-auto.svg' },
+      { name: 'Docker', icon: '/icons/docker.svg' },
+      { name: 'AWS', icon: '/icons/aws-auto.svg' },
+      { name: 'Cloudflare', icon: '/icons/cloudflare-auto.svg' },
+      { name: 'Workers', icon: '/icons/workers-auto.svg' },
+      { name: 'Vercel', icon: '/icons/vercel-auto.svg' },
+      { name: 'GitHub Actions', icon: '/icons/githubactions-auto.svg' },
+      { name: 'Sentry', icon: '/icons/sentry.svg' },
+      { name: 'Terraform', icon: '/icons/terraform-auto.svg' },
+      { name: 'Kubernetes', icon: '/icons/kubernetes.svg' },
+    ],
+  },
+  {
+    category: 'Systems & Platforms',
+    items: [
+      { name: 'Linux', icon: '/icons/linux-auto.svg' },
+      { name: 'Ubuntu', icon: '/icons/ubuntu.svg' },
+      { name: 'Arch Linux', icon: '/icons/arch-auto.svg' },
+      { name: 'Red Hat', icon: '/icons/redhat-auto.svg' },
+      { name: 'WordPress', icon: '/icons/wordpress.svg' },
+    ],
+  },
 ];
 
 export default function App() {
@@ -115,7 +190,7 @@ export default function App() {
             opacity: 1,
             x: 0,
             duration: 0.6,
-            delay: i * 0.1,
+            delay: 0,
             ease: 'power3.out',
             scrollTrigger: {
               trigger: el,
@@ -241,7 +316,9 @@ export default function App() {
             </p>
             <h2 className='text-5xl font-black tracking-tighter uppercase md:text-7xl'>Projects</h2>
           </div>
-          <p className='hidden font-mono text-sm md:block text-neutral-500'>05 Selected</p>
+          <p className='hidden font-mono text-sm md:block text-neutral-500'>
+            {String(projects.length).padStart(2, '0')} Selected
+          </p>
         </div>
         <div className='flex flex-col gap-24'>
           {projects.map((project) => (
@@ -249,6 +326,7 @@ export default function App() {
               key={project.id}
               type='button'
               className='relative w-full p-0 pt-12 text-left bg-transparent border-t cursor-pointer vdf-reveal group border-neutral-800'
+              onClick={() => window.open(project.url, '_blank', 'noopener,noreferrer')}
               onMouseEnter={() => setHoveredProject(project.id)}
               onMouseLeave={() => setHoveredProject(null)}
             >
@@ -274,6 +352,9 @@ export default function App() {
                   <p className='text-xl tracking-widest uppercase text-neutral-400'>
                     {project.category}
                   </p>
+                  <p className='mt-2 font-mono text-[10px] tracking-[0.2em] uppercase text-neutral-600 group-hover:text-white/70'>
+                    View Repo
+                  </p>
                   <div
                     className='h-2 mt-4 transition-all duration-500 ease-out bg-current'
                     style={{
@@ -293,27 +374,37 @@ export default function App() {
       </section>
 
       {/* Skills */}
-      <section id='vdf-skills' className='px-8 py-32 lg:px-24 bg-neutral-950'>
-        <div className='mb-20 vdf-reveal'>
+      <section id='vdf-skills' className='px-8 py-14 lg:px-24 lg:py-16 bg-neutral-950'>
+        <div className='mb-6 vdf-reveal'>
           <p className='mb-2 font-mono text-sm tracking-widest text-red-500 uppercase'>
             Capabilities
           </p>
-          <h2 className='text-5xl font-black tracking-tighter uppercase md:text-7xl'>Skills</h2>
+          <h2 className='text-4xl font-black tracking-tighter uppercase md:text-6xl'>Skills</h2>
         </div>
-        <div className='grid gap-12 md:grid-cols-2 lg:grid-cols-4'>
+        <div className='grid gap-2 md:grid-cols-2 xl:grid-cols-4'>
           {skills.map((group) => (
             <div key={group.category} className='vdf-reveal'>
-              <h3 className='pb-3 mb-6 font-mono text-sm tracking-widest text-red-500 uppercase border-b border-neutral-800'>
+              <h3 className='pb-1 mb-1 font-mono text-[11px] tracking-[0.14em] text-red-500 uppercase border-b border-neutral-800'>
                 {group.category}
               </h3>
-              <ul className='space-y-3'>
+              <ul className='grid grid-cols-3 gap-0.5 sm:grid-cols-4'>
                 {group.items.map((skill) => (
                   <li
-                    key={skill}
-                    className='flex items-center gap-3 text-lg font-light transition-colors vdf-stagger text-neutral-300 group/skill hover:text-white'
+                    key={skill.name}
+                    className='vdf-stagger group/skill'
+                    title={skill.name}
                   >
-                    <span className='h-[2px] w-0 bg-red-500 group-hover/skill:w-4 transition-all duration-300' />
-                    {skill}
+                    <span className='relative flex flex-col items-center justify-center min-h-[74px] gap-0.5 p-0.5 transition-transform duration-300 group-hover/skill:-translate-y-0.5'>
+                      <img
+                        src={skill.icon}
+                        alt={skill.name}
+                        loading='lazy'
+                        className='object-contain w-10 h-10'
+                      />
+                      <span className='text-[11px] leading-tight text-center uppercase tracking-[0.02em] text-neutral-500 group-hover/skill:text-neutral-200'>
+                        {skill.name}
+                      </span>
+                    </span>
                   </li>
                 ))}
               </ul>
@@ -351,18 +442,14 @@ export default function App() {
             </div>
           </div>
           <div className='relative vdf-reveal'>
-            <div className='relative overflow-hidden rounded-sm aspect-square bg-neutral-800'>
-              <div className='absolute inset-0 bg-gradient-to-br from-red-500/20 via-transparent to-purple-500/10' />
-              <div className='absolute inset-0 flex items-center justify-center'>
-                <div className='text-center'>
-                  <p className='text-[120px] font-black text-white/5 leading-none'>CB</p>
-                  <div className='mt-4 space-y-1'>
-                    <p className='font-mono text-xs text-neutral-600'>8+ YEARS EXPERIENCE</p>
-                    <p className='font-mono text-xs text-neutral-600'>50+ PROJECTS SHIPPED</p>
-                    <p className='font-mono text-xs text-neutral-600'>4.2K GITHUB STARS</p>
-                  </div>
-                </div>
-              </div>
+            <div className='relative overflow-hidden rounded-sm aspect-square bg-neutral-900'>
+              <img
+                src='/images/photo.jpg'
+                alt='Portrait of Corey Burns'
+                loading='lazy'
+                className='object-cover object-center w-full h-full'
+              />
+              <div className='absolute inset-0 bg-gradient-to-t from-neutral-950/55 via-transparent to-red-500/10' />
             </div>
             <div className='absolute w-full h-full border rounded-sm -bottom-4 -right-4 border-red-500/20 -z-10' />
           </div>
