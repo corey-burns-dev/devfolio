@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://coreyburns.ca/sitemap-index.xml
